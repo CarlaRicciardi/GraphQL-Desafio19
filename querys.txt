@@ -1,0 +1,41 @@
+query allProducts {
+  getProductos {
+    id
+    title
+    price
+    thumbnail
+  }
+}
+
+mutation createProduct {
+  createProducto(datos: {title: "pomelo", price: 190, thumbnail: "https://cdn4.iconfinder.com/data/icons/fruits-79/48/03-grapefruit-1024.png"}) {
+    id
+  }
+}
+
+query productById {
+  getProducto(id: "81c6d02e4045eeacf9f5") {
+    id
+    title
+    price
+  }
+}
+
+mutation updateProduct {
+  updateProducto(id: "81c6d02e4045eeacf9f5", datos: {title: "limon", price: 75, thumbnail: "https://cdn4.iconfinder.com/data/icons/fruits-79/48/22-lime-1024.png"}) {
+    id
+    title
+  }
+}
+
+query getFilter {
+  getProductos(campo: "title", valor: "limon") {
+    title
+  }
+}
+
+mutation deleteProductById {
+  deleteProducto(id: "81c6d02e4045eeacf9f5") {
+    title
+  }
+}
